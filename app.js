@@ -1,35 +1,38 @@
 const img = document.querySelector('.img');
-const name = document.querySelector('.name');
+const fullName = document.querySelector('.name');
 const username = document.querySelector('.username');
 const website = document.querySelector('.website');
 const country = document.querySelector('.country');
 const followers = document.querySelector('.followers');
 const following = document.querySelector('.following');
-const search = document.querySelector('.search');
-
+const searchInput = document.querySelector('.search');
 const searchUser = document.querySelector('.searchUser');
 
-search.addEventListener('submit', (e) => {
+function formSubmit(e) {
 	e.preventDefault();
-	const username = searchUser.value;
+	const githubUser = searchInput.value;
+	fetchUser(githubUser);
+}
 
-	const url = `https://api.github.com/users/${username}`;
+async function fetchUser(username) {
+	const response = await fetch(`https://api.github.com/users/${username}`);
+	const returnedData = await response.json();
 
-	const apiCall = async () => {
-		const response = await fetch(url);
+	if (!response.ok) {
+		throw new Error(`HTTP error! status: ${response.status}`);
+	}
 
-		const data = await response.json();
+	return updateDOM(returnedData);
+}
 
-		img.src = data.avatar_url;
-		name.textContent = data.name;
-		username.textContent = data.login;
-		website.textContent = data.blog;
-		country.textContent = data.location;
-		followers.textContent = data.followers;
-		following.textContent = data.following;
+function updateDOM(user) {
+	img.src = user.avatar_url;
+	fullName.textContent = user.name;
+	username.textContent = user.login;
+	website.textContent = user.blog;
+	country.textContent = user.location;
+	followers.textContent = user.followers;
+	following.textContent = user.following;
+}
 
-		console.log(data);
-	};
-
-	apiCall();
-});
+fetchUser('hariscs');
