@@ -5,14 +5,16 @@ const website = document.querySelector('.website');
 const country = document.querySelector('.country');
 const followers = document.querySelector('.followers');
 const following = document.querySelector('.following');
-const searchInput = document.querySelector('.search');
+const searchForm = document.querySelector('.search');
 const searchUser = document.querySelector('.searchUser');
 
 function formSubmit(e) {
 	e.preventDefault();
-	const githubUser = searchInput.value;
+	const githubUser = searchUser.value;
 	fetchUser(githubUser);
 }
+
+searchForm.addEventListener('submit', formSubmit);
 
 async function fetchUser(username) {
 	const response = await fetch(`https://api.github.com/users/${username}`);
