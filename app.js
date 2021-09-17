@@ -21,12 +21,12 @@ search.addEventListener('submit', (e) => {
 		const data = await response.json();
 
 		img.src = data.avatar_url;
-		name.textContent += data.name;
-		username.textContent += data.login;
-		website.textContent += data.blog;
-		country.textContent += data.location;
-		followers.textContent += data.followers;
-		following.textContent += data.following;
+		name.textContent = data.name;
+		username.textContent = data.login;
+		website.textContent = data.blog;
+		country.textContent = data.location;
+		followers.textContent = data.followers;
+		following.textContent = data.following;
 
 		console.log(data);
 	};
