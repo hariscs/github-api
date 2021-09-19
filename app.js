@@ -12,6 +12,7 @@ function formSubmit(e) {
 	e.preventDefault();
 	const githubUser = searchUser.value;
 	fetchUser(githubUser);
+	searchUser.value = '';
 }
 
 searchForm.addEventListener('submit', formSubmit);
