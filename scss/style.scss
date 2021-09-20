@@ -113,7 +113,31 @@ h4 {
 }
 
 @media (min-width: 600px) {
-	body {
-		background: chartreuse;
+	.user-profile {
+		justify-content: space-around;
+	}
+
+	.data {
+		background: hsl(219, 30%, 18%);
+		margin-bottom: 2em;
+	}
+
+	.data,
+	.socials {
+		display: flex;
+		gap: 2em;
+		justify-content: center;
+		align-items: center;
+	}
+	.card {
+		flex-direction: column;
+		align-items: center;
+	}
+	.data {
+		.repos,
+		.following,
+		.followers {
+			margin-top: 0;
+		}
 	}
 }

@@ -3,8 +3,11 @@ const fullName = document.querySelector('.name');
 const username = document.querySelector('.username');
 const website = document.querySelector('.website');
 const country = document.querySelector('.country');
+const twitter = document.querySelector('.twitter');
 const followers = document.querySelector('.followers');
 const following = document.querySelector('.following');
+const repos = document.querySelector('.repos');
+const bio = document.querySelector('.bio');
 const searchForm = document.querySelector('.search');
 const searchUser = document.querySelector('.searchUser');
 
@@ -18,7 +21,7 @@ function formSubmit(e) {
 searchForm.addEventListener('submit', formSubmit);
 
 async function fetchUser(username) {
-	// const response = await fetch(`https://api.github.com/users/${username}`);
+	const response = await fetch(`https://api.github.com/users/${username}`);
 	const returnedData = await response.json();
 
 	if (!response.ok) {
@@ -36,6 +39,9 @@ function updateDOM(user) {
 	country.textContent = user.location;
 	followers.textContent = user.followers;
 	following.textContent = user.following;
+	repos.textContent = user.public_repos;
+	twitter.textContent = user.twitter_username;
+	bio.textContent = user.bio;
 }
 
 fetchUser('hariscs');
