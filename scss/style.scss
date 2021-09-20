@@ -8,5 +8,112 @@ html {
 }
 
 body {
-	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	font-family: 'Poppins', sans-serif;
+	background: hsl(218, 28%, 13%);
+	color: #fff;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+h3,
+h4 {
+	font-weight: 500;
+}
+
+.container {
+	width: 90%;
+	max-width: 700px;
+	margin: 2em auto;
+	padding: 0.5em;
+}
+
+.search {
+	display: flex;
+	gap: 2em;
+	flex-direction: column;
+}
+
+.header {
+	background: hsl(219, 30%, 18%);
+	padding: 1em;
+	border-radius: 8px;
+
+	display: flex;
+	align-items: center;
+	.fas {
+		margin-right: 0.5em;
+	}
+	input {
+		padding: 0.5em;
+		border: 0;
+		border-radius: 5px;
+		font-family: inherit;
+		width: 100%;
+		color: hsl(198, 60%, 50%);
+	}
+
+	button {
+		border: 0;
+		background: hsl(198, 60%, 50%);
+		color: #fff;
+		font-family: inherit;
+		border-radius: 0 5px 5px 0;
+		padding: 0.5em;
+		cursor: pointer;
+		margin-left: -0.5em;
+	}
+}
+
+.main {
+	border-radius: 8px;
+	background: hsl(216, 53%, 9%);
+	padding: 1em;
+
+	img {
+		width: 120px;
+		height: 120px;
+		border-radius: 100vh;
+	}
+}
+
+.user-profile {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 2em;
+
+	.name {
+		margin: 0;
+	}
+
+	.username {
+		margin: 0;
+		font-style: italic;
+		color: hsl(198, 60%, 50%);
+	}
+
+	.bio {
+		margin-bottom: 0;
+	}
+}
+
+.socials {
+	display: grid;
+	align-items: center;
+}
+
+.card {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+
+@media (min-width: 600px) {
+	body {
+		background: chartreuse;
+	}
 }

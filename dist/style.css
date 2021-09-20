@@ -8,6 +8,114 @@ html {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #181f2a;
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h3,
+h4 {
+  font-weight: 500;
+}
+
+.container {
+  width: 90%;
+  max-width: 700px;
+  margin: 2em auto;
+  padding: 0.5em;
+}
+
+.search {
+  display: flex;
+  gap: 2em;
+  flex-direction: column;
+}
+
+.header {
+  background: #202a3c;
+  padding: 1em;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.header .fas {
+  margin-right: 0.5em;
+}
+
+.header input {
+  padding: 0.5em;
+  border: 0;
+  border-radius: 5px;
+  font-family: inherit;
+  width: 100%;
+  color: #339ecc;
+}
+
+.header button {
+  border: 0;
+  background: #339ecc;
+  color: #fff;
+  font-family: inherit;
+  border-radius: 0 5px 5px 0;
+  padding: 0.5em;
+  cursor: pointer;
+  margin-left: -0.5em;
+}
+
+.main {
+  border-radius: 8px;
+  background: #0b1523;
+  padding: 1em;
+}
+
+.main img {
+  width: 120px;
+  height: 120px;
+  border-radius: 100vh;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.user-profile .name {
+  margin: 0;
+}
+
+.user-profile .username {
+  margin: 0;
+  font-style: italic;
+  color: #339ecc;
+}
+
+.user-profile .bio {
+  margin-bottom: 0;
+}
+
+.socials {
+  display: grid;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+@media (min-width: 600px) {
+  body {
+    background: chartreuse;
+  }
 }
 /*# sourceMappingURL=style.css.map */

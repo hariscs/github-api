@@ -18,13 +18,13 @@ function formSubmit(e) {
 searchForm.addEventListener('submit', formSubmit);
 
 async function fetchUser(username) {
-	const response = await fetch(`https://api.github.com/users/${username}`);
+	// const response = await fetch(`https://api.github.com/users/${username}`);
 	const returnedData = await response.json();
 
 	if (!response.ok) {
 		throw new Error(`HTTP error! status: ${response.status}`);
 	}
-
+	console.log(returnedData);
 	return updateDOM(returnedData);
 }
 
