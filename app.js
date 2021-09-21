@@ -27,7 +27,7 @@ async function fetchUser(username) {
 	if (!response.ok) {
 		throw new Error(`HTTP error! status: ${response.status}`);
 	}
-	console.log(returnedData);
+
 	return updateDOM(returnedData);
 }
 
